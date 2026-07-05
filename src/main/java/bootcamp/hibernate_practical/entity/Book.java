@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
 @Data
 public class Book {
     @Id
@@ -24,6 +23,7 @@ public class Book {
     private String genre;
     private int publicationYear;
     private boolean available;
+    private boolean borrowedStatus;
 
     public Book(String title, String author, String genre, int publicationYear, boolean available) {
         this.title = title;
@@ -31,5 +31,6 @@ public class Book {
         this.genre = genre;
         this.publicationYear = publicationYear;
         this.available = available;
+        this.borrowedStatus = false;
     }
 }

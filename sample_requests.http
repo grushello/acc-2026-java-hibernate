@@ -1,0 +1,133 @@
+### Create Book 1
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "genre": "Programming",
+  "publicationYear": 2008
+}
+
+###
+
+### Create Book 2
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Effective Java",
+  "author": "Joshua Bloch",
+  "genre": "Programming",
+  "publicationYear": 2018
+}
+
+###
+
+### Create Book 3
+POST http://localhost:8080/api/books
+Content-Type: application/json
+
+{
+  "title": "Clean Architecture",
+  "author": "Robert C. Martin",
+  "genre": "Software Engineering",
+  "publicationYear": 2017
+}
+
+###
+
+### Get All Books
+GET http://localhost:8080/api/books
+
+###
+
+### Get Book By ID (ID = 1)
+GET http://localhost:8080/api/books/1
+
+###
+
+### Update Book 1
+PUT http://localhost:8080/api/books/1
+Content-Type: application/json
+
+{
+  "title": "Clean Code (2nd Edition)",
+  "author": "Robert C. Martin",
+  "genre": "Programming",
+  "publicationYear": 2025,
+  "available": false,
+  "borrowedStatus": false
+}
+
+###
+
+### Get Book 1 After Update
+GET http://localhost:8080/api/books/1
+
+###
+
+### Find Books by Author
+GET http://localhost:8080/api/books/author/Robert%20C.%20Martin
+
+###
+
+### Get Available Books
+GET http://localhost:8080/api/books/available
+
+###
+
+### Delete Book 2
+DELETE http://localhost:8080/api/books/2
+
+###
+
+### Try to Get Deleted Book
+GET http://localhost:8080/api/books/2
+
+###
+
+### Get All Books After Deletion
+GET http://localhost:8080/api/books
+
+###
+
+### Search for Joshua Bloch Books
+GET http://localhost:8080/api/books/author/Joshua%20Bloch
+
+###
+
+### Search for Robert C. Martin Books
+GET http://localhost:8080/api/books/author/Robert%20C.%20Martin
+
+###
+
+### Borrow book with id 1
+POST http://localhost:8080/api/books/1/borrow
+
+###
+
+### Borrow book with id 2
+POST http://localhost:8080/api/books/2/borrow
+
+###
+
+### Return book with id 1
+POST http://localhost:8080/api/books/1/return
+
+###
+
+### Return book with id 2
+POST http://localhost:8080/api/books/2/return
+
+###
+
+### Search
+GET http://localhost:8080/api/books/search?title=Clean
+
+###
+
+### Search
+GET http://localhost:8080/api/books/search?title=Code
+
+###
