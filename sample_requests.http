@@ -1,4 +1,45 @@
-### Create Book 1
+### Security tests:
+### Admin add book 1
+POST http://localhost:8080/api/books
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/json
+
+{
+  "title": "Clean Code",
+  "author": "Robert C. Martin",
+  "genre": "Programming",
+  "publicationYear": 2008
+}
+###
+### Admin add book 2
+POST http://localhost:8080/api/books
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/json
+
+{
+  "title": "Effective Java",
+  "author": "Joshua Bloch",
+  "genre": "Programming",
+  "publicationYear": 2018
+}
+###
+### User get books:
+GET http://localhost:8080/api/books
+Authorization: Basic dXNlcjp1c2Vy
+###
+### User add book 3
+POST http://localhost:8080/api/books
+Authorization: Basic dXNlcjp1c2Vy
+Content-Type: application/json
+
+{
+  "title": "Clean Architecture",
+  "author": "Robert C. Martin",
+  "genre": "Software Engineering",
+  "publicationYear": 2017
+}
+###Old tests below, all are unauthorized
+### Create Book
 POST http://localhost:8080/api/books
 Content-Type: application/json
 
@@ -9,6 +50,9 @@ Content-Type: application/json
   "publicationYear": 2008
 }
 
+###
+### get books no authorization
+GET http://localhost:8080/api/books
 ###
 
 ### Create Book 2
